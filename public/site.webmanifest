@@ -1,0 +1,10 @@
+{
+  "name": "Plateful",
+  "short_name": "Plateful",
+  "description": "Plan a week of meals for your household and get the grocery list.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f5f2ea",
+  "theme_color": "#f5f2ea",
+  "icons": [{ "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml" }]
+}

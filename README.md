@@ -7,7 +7,7 @@
 Pick a diet and a macro profile, describe the people eating, and Plateful plans shared dishes with portions sized for each person, then adds up every raw ingredient you need to buy. Everything runs in your browser.
 
 [![Live app](https://img.shields.io/badge/live%20app-plateful.lucabonaldo.dev-2e7d32?style=flat-square)](https://plateful.lucabonaldo.dev)
-[![Status](https://img.shields.io/badge/status-in%20design-8a5a08?style=flat-square)](docs/REQUIREMENTS.md)
+[![Status](https://img.shields.io/badge/status-in%20development-8a5a08?style=flat-square)](docs/REQUIREMENTS.md)
 [![TypeScript](https://img.shields.io/badge/TypeScript-strict-3178c6?style=flat-square&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![React](https://img.shields.io/badge/React-61dafb?style=flat-square&logo=react&logoColor=black)](https://react.dev/)
 [![Vite](https://img.shields.io/badge/built%20with-Vite-646cff?style=flat-square&logo=vite&logoColor=white)](https://vite.dev/)
@@ -32,13 +32,13 @@ Pick a diet and a macro profile, describe the people eating, and Plateful plans 
 </p>
 
 > [!NOTE]
-> Plateful is in the design phase. The requirements are in [`docs/REQUIREMENTS.md`](docs/REQUIREMENTS.md), and the UI/UX design is in [`docs/design`](docs/design): 13 mobile and 3 desktop screens in light and dark, drawn in Penpot. There's no app code yet.
+> Plateful is in early development. The requirements are in [`docs/REQUIREMENTS.md`](docs/REQUIREMENTS.md) and the UI/UX design in [`docs/design`](docs/design). The recipe database has 102 recipes so far; the target is 300+ (FR-DB-1).
 
 ## Overview
 
 Plateful is a free, static, client-only web app. There's no backend, no account, no cookies and no tracking. Your household and plans are stored in your browser's local storage, and you can export, import or delete them at any time as a single JSON file.
 
-## Features (planned)
+## Features
 
 - **Household:** any number of adults, each with sex, age, weight, height, activity level and goal (lose, maintain, gain). Calorie targets use Mifflin-St Jeor.
 - **Diet types:** omnivore, flexitarian, pescatarian, vegetarian, vegan.
@@ -49,7 +49,7 @@ Plateful is a free, static, client-only web app. There's no backend, no account,
 - **Grocery list:** exact raw quantities plus suggested package sizes, grouped by aisle. Copy it to the clipboard as a checklist in one click.
 - **Saved plans:** keep, rename, duplicate and reopen past weeks.
 - **Your data, on your device:** JSON export, import and delete.
-- **Bundled database:** 300+ recipes, with nutrition data from USDA FoodData Central.
+- **Bundled database:** 102 recipes (growing to 300+) and 122 ingredients, with nutrition data from USDA FoodData Central.
 
 ## Tech stack
 
@@ -58,10 +58,50 @@ Plateful is a free, static, client-only web app. There's no backend, no account,
 - Zustand (state), Zod (schema validation), React Router (hash routes)
 - Vitest + React Testing Library
 
+## Getting started
+
+### Prerequisites
+
+- Node.js 20 or later
+- npm 10 or later
+
+### Run locally
+
+```sh
+git clone git@github.com:LucaBonaldoIT/plateful.git
+cd plateful
+npm install
+npm run dev:lan
+```
+
+Open http://localhost:5180, or the `Network` URL Vite prints to try it on a phone on the same Wi-Fi.
+
+### Scripts
+
+| Command | Description |
+| --- | --- |
+| `npm run dev` | Dev server on http://localhost:5180 |
+| `npm run dev:lan` | Dev server also reachable from your local network |
+| `npm run build` | Type-check and build the static site into `dist/` |
+| `npm run preview` | Serve the production build locally and on the network |
+| `npm run check` | Type-check only |
+| `npm test` | Unit tests (nutrition, generator, grocery list, import/export) |
+| `npm run db:lint` | Validate the recipe database and print diet × slot coverage |
+
+### Deployment
+
+`npm run build` emits a fully static site in `dist/` with hash routes, so it runs on any static host without rewrites. Production is served from Cloudflare Pages at [plateful.lucabonaldo.dev](https://plateful.lucabonaldo.dev).
+
 ## Project structure
 
 ```text
 plateful/
+├── src/
+│   ├── domain/           Pure TypeScript: nutrition, compatibility, generator, grocery list, schema
+│   ├── data/             Bundled ingredient table and recipe database
+│   ├── state/            Zustand store, localStorage persistence, theme and cookie-notice prefs
+│   └── ui/               React screens, components and app.css
+├── scripts/db-lint.ts    Database checks (FR-DB-5)
 ├── docs/
 │   ├── REQUIREMENTS.md   Product requirements, decision log, legal texts
 │   └── design/
@@ -72,7 +112,6 @@ plateful/
 └── SECURITY.md
 ```
 
-The app source arrives with the implementation phase.
 
 ## Disclaimer
 

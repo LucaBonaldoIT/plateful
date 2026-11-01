@@ -1,0 +1,6 @@
+node_modules
+dist
+coverage
+package-lock.json
+docs/design/screens
+docs/design/plateful.penpot

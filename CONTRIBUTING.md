@@ -13,7 +13,15 @@ Thanks for your interest in Plateful. Bug reports, ideas and pull requests are w
 1. Fork the repository and create a branch from `main`, named `feat/<topic>`, `fix/<topic>` or `docs/<topic>`.
 2. Make your change, keeping it focused on one thing.
 3. Add or update tests for any change to domain logic (nutrition, generator, grocery aggregation, import/export).
-4. Verify locally before pushing (the commands arrive with the app scaffold): tests, type-check, lint and production build must all pass.
+4. Verify locally before pushing:
+
+   ```sh
+   npm run check     # type-check
+   npm test          # unit tests
+   npm run db:lint   # recipe database checks
+   npm run build     # production build
+   ```
+
 5. Open a pull request against `main`.
 
 ## Code guidelines

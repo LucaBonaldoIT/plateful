@@ -1,0 +1,53 @@
+{
+  "name": "plateful",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Plan a week of meals for your household and get the grocery list. Client-only.",
+  "license": "MIT",
+  "author": "Luca Bonaldo (https://github.com/LucaBonaldoIT)",
+  "homepage": "https://plateful.lucabonaldo.dev",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LucaBonaldoIT/plateful.git"
+  },
+  "bugs": {
+    "url": "https://github.com/LucaBonaldoIT/plateful/issues"
+  },
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "dev": "vite",
+    "dev:lan": "vite --host",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview --host",
+    "check": "tsc -b --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "db:lint": "vite-node scripts/db-lint.ts",
+    "format": "prettier --write ."
+  },
+  "dependencies": {
+    "@lucabonaldo/design": "github:LucaBonaldoIT/design#v0.1.0",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "react-router-dom": "^7.18.5",
+    "zod": "^4.6.7",
+    "zustand": "^5.0.16"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^7.0.1",
+    "@testing-library/react": "^16.3.3",
+    "@types/node": "^26.6.6",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vitejs/plugin-react": "^6.1.2",
+    "jsdom": "^29.1.1",
+    "prettier": "^3.9.10",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.5",
+    "vite-node": "^6.0.0",
+    "vitest": "^5.0.5"
+  }
+}

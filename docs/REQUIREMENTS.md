@@ -333,8 +333,9 @@ the list of saved plans.
 - **FR-DATA-6** Imported or stored data that refers to a recipe ID missing from the current
   bundled database shows that meal as "Recipe no longer available" and leaves it out of the
   grocery list, without crashing.
-- **FR-DATA-7** The theme preference is handled by the design system's own storage and is not
-  part of the exported document.
+- **FR-DATA-7** The theme preference is stored under its own `localStorage` key,
+  `plateful:theme`, and is not part of the exported document. The design system's theme helpers
+  are not used, because they store the choice in a `theme` cookie, which would break FR-LEGAL-6.
 
 ---
 
@@ -408,6 +409,7 @@ interface PlatefulData {
     acceptedVersion: string; // e.g. "2026-11-01"
     acceptedAt: string;      // ISO datetime
   };
+  onboarded: boolean;    // first-run setup finished (§3)
   household: Household;  // current household
   defaultSettings: PlanSettings;
   plans: Plan[];
@@ -543,9 +545,10 @@ interface Recipe {
 
 - **FR-UI-1** Use `@lucabonaldo/design` ("Paper & ink") pinned to
   `github:LucaBonaldoIT/design#v0.1.0`:
-  - `designSystem()` Vite plugin (theme init script, so the theme doesn't flash on load);
   - `fonts.css` (self-hosted Fraunces + Inter) and `index.css`;
-  - `initTheme()` and a `.ds-theme-toggle` in the header (light / dark / system).
+  - a light / dark / system theme toggle in the header, resolved before first paint by an inline
+    script in `index.html`. Plateful uses its own `localStorage`-based script instead of the
+    `designSystem()` plugin and `initTheme()`, which store the choice in a cookie (FR-DATA-7).
 - **FR-UI-2** Use the system's components wherever one fits: `.ds-header`, `.ds-wordmark`,
   `.ds-nav`, `.ds-button` (`--primary`, `--quiet`, `--small`, `--icon`), `.ds-field`,
   `.ds-label`, `.ds-input`, `.ds-check`, `.ds-hint`, `.ds-panel`, `.ds-dialog`, `.ds-notice`
@@ -607,7 +610,8 @@ Settings) as a bottom bar on mobile and `.ds-nav` in the header on wide screens.
 - **NFR-TECH-3** Schema validation and migrations with Zod (import and app start).
 - **NFR-TECH-4** Routing with React Router using hash routes, so the build deploys to any static
   host without server rewrites.
-- **NFR-TECH-5** No UI component library; the design system plus app CSS (CSS Modules) only.
+- **NFR-TECH-5** No UI component library; the design system plus one unlayered app stylesheet
+  (`src/ui/app.css`, classes prefixed `pf-`) that uses role tokens only.
 - **NFR-TECH-6** Domain logic (nutrition, generator, aggregation, packaging, clipboard formatting)
   lives in pure TypeScript modules with no React imports.
 - **NFR-TECH-7** Tooling: ESLint, Prettier (matching the design system's config), Vitest +
