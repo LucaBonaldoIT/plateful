@@ -19,8 +19,20 @@ Pick a diet and a macro profile, describe the people eating, and Plateful plans 
 
 ---
 
+<p align="center">
+  <img src="docs/design/screens/desktop-light/d1-plan-week.png" alt="Plateful desktop week view: a 7-day grid of shared meals with per-person calorie and macro averages" width="900">
+</p>
+
+<p align="center">
+  <img src="docs/design/screens/mobile-light/05-plan-day.png" alt="Plateful mobile day view with meal cards and per-person totals" width="260">
+  &nbsp;
+  <img src="docs/design/screens/mobile-dark/04-plans.png" alt="Plateful saved plans list in dark mode" width="260">
+  &nbsp;
+  <img src="docs/design/screens/mobile-light/07-meal-swap.png" alt="Plateful swap sheet listing compatible breakfast alternatives ranked by macro fit" width="260">
+</p>
+
 > [!NOTE]
-> Plateful is in the design phase. The requirements are in [`docs/REQUIREMENTS.md`](docs/REQUIREMENTS.md), and the UI/UX design is being drawn in Penpot ([`docs/design`](docs/design)). There's no app code yet.
+> Plateful is in the design phase. The requirements are in [`docs/REQUIREMENTS.md`](docs/REQUIREMENTS.md), and the UI/UX design is in [`docs/design`](docs/design): 13 mobile and 3 desktop screens in light and dark, drawn in Penpot. There's no app code yet.
 
 ## Overview
 
@@ -52,7 +64,9 @@ Plateful is a free, static, client-only web app. There's no backend, no account,
 plateful/
 ├── docs/
 │   ├── REQUIREMENTS.md   Product requirements, decision log, legal texts
-│   └── design/           Penpot design files and exported screens
+│   └── design/
+│       ├── screens/      PNG exports: foundations, mobile and desktop, light and dark
+│       └── penpot/       Scripts that rebuild the Penpot file through the Penpot MCP
 ├── LICENSE               MIT
 ├── CONTRIBUTING.md
 └── SECURITY.md
