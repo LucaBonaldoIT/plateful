@@ -754,7 +754,8 @@ medical, nutritional or dietary advice.**
 
 *Last updated: 1 November 2026*
 
-These Terms govern your use of the Plateful web app ("Plateful", "the app"), provided by
+These Terms govern your use of the Plateful web app ("Plateful", "the app") at **https://plateful.lucabonaldo.dev**,
+provided by
 **Luca Bonaldo**, an individual ("I", "me"). Contact: **me@lucabonaldo.dev**.
 
 1. **Acceptance.** By ticking the acceptance box or by using the app, you agree to these Terms,
