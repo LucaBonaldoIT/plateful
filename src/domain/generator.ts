@@ -141,7 +141,8 @@ function dayCost(ctx: Ctx, assign: Assign, day: Day): number {
   sums.forEach((s, i) => {
     const split = macroSplit(s);
     const t = ctx.macroTarget;
-    total += (Math.abs(split.carbs - t.carbs) + Math.abs(split.protein - t.protein) + Math.abs(split.fat - t.fat)) / ctx.targets.length;
+    // macro fit counts double: calories are matched by portion scaling anyway (FR-WP-5)
+    total += (2 * (Math.abs(split.carbs - t.carbs) + Math.abs(split.protein - t.protein) + Math.abs(split.fat - t.fat))) / ctx.targets.length;
     const kcalTarget = ctx.targets[i]!.kcal * share;
     total += (Math.abs(s.kcal - kcalTarget) / kcalTarget) * 50 / ctx.targets.length;
   });

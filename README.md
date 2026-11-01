@@ -32,7 +32,7 @@ Pick a diet and a macro profile, describe the people eating, and Plateful plans 
 </p>
 
 > [!NOTE]
-> Plateful is in early development. The requirements are in [`docs/REQUIREMENTS.md`](docs/REQUIREMENTS.md) and the UI/UX design in [`docs/design`](docs/design). The recipe database has 102 recipes so far; the target is 300+ (FR-DB-1).
+> Plateful is in early development. The requirements are in [`docs/REQUIREMENTS.md`](docs/REQUIREMENTS.md) and the UI/UX design in [`docs/design`](docs/design).
 
 ## Overview
 
@@ -49,7 +49,7 @@ Plateful is a free, static, client-only web app. There's no backend, no account,
 - **Grocery list:** exact raw quantities plus suggested package sizes, grouped by aisle. Copy it to the clipboard as a checklist in one click.
 - **Saved plans:** keep, rename, duplicate and reopen past weeks.
 - **Your data, on your device:** JSON export, import and delete.
-- **Bundled database:** 102 recipes (growing to 300+) and 122 ingredients, with nutrition data from USDA FoodData Central.
+- **Bundled database:** 362 recipes, 187 of them vegan and 292 vegetarian, plus 204 ingredients with nutrition data from USDA FoodData Central.
 
 ## Tech stack
 
@@ -100,7 +100,7 @@ Open http://localhost:5180, or the `Network` URL Vite prints to try it on a phon
 plateful/
 ├── src/
 │   ├── domain/           Pure TypeScript: nutrition, compatibility, generator, grocery list, schema
-│   ├── data/             Bundled ingredient table and recipe database
+│   ├── data/             Ingredient table and recipes (data/recipes/: one file per category)
 │   ├── state/            Zustand store, localStorage persistence, theme and cookie-notice prefs
 │   └── ui/               React screens, components and app.css
 ├── scripts/              db-lint.ts (FR-DB-5), og-image.sh (social image and icons)

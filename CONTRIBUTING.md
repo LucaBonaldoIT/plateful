@@ -37,7 +37,8 @@ Thanks for your interest in Plateful. Bug reports, ideas and pull requests are w
 
 - Nutrition values must come from USDA FoodData Central, and each ingredient records its source ID.
 - Diet compatibility and allergens are derived from ingredients, so never tag them on recipes by hand.
-- Run the database lint (`db:lint`) before submitting data changes.
+- Recipes live in `src/data/recipes/` (one file per category, one line per recipe; the format is documented in `index.ts`).
+- Run the database lint (`npm run db:lint`) before submitting data changes: it checks references, calorie ranges and diet coverage.
 
 ## Commit messages
 

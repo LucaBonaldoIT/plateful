@@ -1,10 +1,6 @@
-// Recipe database (REQUIREMENTS §11.2–11.3). One line per recipe:
-//   id | name | slots (B lunch-L dinner-D snack-S) | primary ingredient | flags (m = mediterranean,
-//   b = batchable) | minutes | ingredients "id qty, …" for ONE base serving, as-purchased | steps "… / …"
-// Diet compatibility and allergens are derived from ingredients, never declared here (FR-HH-7).
-import type { Recipe, SlotType } from '../domain/types';
-
-const SOURCE = `
+// The original recipe set: breakfasts, snacks and mains across every diet.
+// Line format: see ./index.ts.
+export const BASE = `
 greek-yogurt-bowl | Greek yogurt bowl with berries & walnuts | B | greek-yogurt | m | 5 | greek-yogurt 250, frozen-berries 100, walnuts 20, honey 10 | Thaw the berries or warm them briefly. / Spoon the yogurt into a bowl and top with berries, walnuts and honey.
 overnight-oats-pb | Overnight oats with banana & peanut butter | B | oats |  | 5 | oats 60, milk 200, banana 1, peanut-butter 15 | Mix oats and milk in a jar and refrigerate overnight. / Top with sliced banana and peanut butter.
 vegan-overnight-oats | Overnight oats with soy milk & berries | B | oats |  | 5 | oats 60, soy-milk 200, frozen-berries 100, chia 10, maple-syrup 10 | Mix oats, chia and soy milk; refrigerate overnight. / Top with berries and maple syrup.
@@ -108,26 +104,3 @@ chicken-veg-soup | Chicken & vegetable soup | L,D | chicken-breast | b | 40 | ch
 turkey-burrito-bowl | Turkey & black bean burrito bowl | L | turkey-mince |  | 20 | turkey-mince 110, brown-rice 45, black-beans 120, sweetcorn 60, cherry-tomato 60, avocado 0.25, lime 0.25 | Cook the rice. / Brown the turkey. / Assemble with beans, corn, tomato, avocado and lime.
 chicken-satay-noodles | Chicken satay with rice noodles | L,D | chicken-breast |  | 25 | chicken-breast 130, rice-noodles 55, peanut-butter 15, tamari 10, lime 0.25, cucumber 0.3, spring-onion 1 | Grill the chicken. / Whisk peanut butter, tamari, lime and hot water into a sauce. / Toss with noodles, cucumber and spring onion.
 `;
-
-const SLOT: Record<string, SlotType> = { B: 'breakfast', L: 'lunch', D: 'dinner', S: 'snack' };
-
-export const RECIPES: Recipe[] = SOURCE.trim()
-  .split('\n')
-  .map((line) => {
-    const [id, name, slots, primary, flags, minutes, ingredients, steps] = line.split('|').map((s) => s.trim());
-    const f = (flags ?? '').split(',').filter(Boolean);
-    return {
-      id: id!,
-      name: name!,
-      slots: slots!.split(',').map((s) => SLOT[s]!),
-      primaryIngredient: primary!,
-      tags: f.includes('m') ? ['mediterranean' as const] : [],
-      batchable: f.includes('b'),
-      prepMinutes: Number(minutes),
-      ingredients: ingredients!.split(',').map((pair) => {
-        const [ingredientId, qty] = pair.trim().split(' ');
-        return { ingredientId: ingredientId!, quantity: Number(qty) };
-      }),
-      steps: steps!.split(' / ').map((s) => s.trim()),
-    };
-  });
