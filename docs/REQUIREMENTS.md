@@ -642,6 +642,19 @@ Settings) as a bottom bar on mobile and `.ds-nav` in the header on wide screens.
   Pages, custom domain, HTTPS only). The build sets that canonical URL, and `robots.txt`,
   `sitemap.xml` and `site.webmanifest` live in `public/` (as in flaplab).
 
+### SEO and sharing
+
+- **NFR-SEO-1** `index.html` carries a descriptive title and meta description, canonical URL,
+  `robots` (index, follow, large image previews), Open Graph and Twitter `summary_large_image`
+  tags, and `WebApplication` JSON-LD. A `<noscript>` block describes the app for crawlers that
+  don't run JavaScript.
+- **NFR-SEO-2** The social image `public/og-image.png` is 1200 × 630, shows the brand, tagline and
+  a screenshot of the week view, and is regenerated with `scripts/og-image.sh` from
+  `scripts/og-image/og.html`.
+- **NFR-SEO-3** Icons: SVG favicon, 32 px PNG favicon, 180 px `apple-touch-icon`, and 192/512 px
+  manifest icons (the 512 also as `maskable`). `robots.txt` and `sitemap.xml` point at the
+  production URL. Only `/` is indexable, because in-app routes are hash-based.
+
 - **NFR-BR-1** The last 2 versions of Chrome, Edge, Firefox and Safari (desktop and iOS/Android).
 
 ### Testing

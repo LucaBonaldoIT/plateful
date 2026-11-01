@@ -1,10 +1,19 @@
 {
-  "name": "Plateful",
+  "id": "/",
+  "name": "Plateful — Weekly Meal Planner",
   "short_name": "Plateful",
-  "description": "Plan a week of meals for your household and get the grocery list.",
+  "description": "Plan a week of meals for your household and get the grocery list. Offline, no account, no cookies.",
+  "lang": "en",
   "start_url": "/",
+  "scope": "/",
   "display": "standalone",
   "background_color": "#f5f2ea",
   "theme_color": "#f5f2ea",
-  "icons": [{ "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml" }]
+  "categories": ["food", "health", "lifestyle"],
+  "icons": [
+    { "src": "/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" },
+    { "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+  ]
 }

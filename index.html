@@ -1,6 +1,8 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <script>
       // Resolve the theme before first paint. Plateful stores the choice in localStorage
       // (no cookies, see REQUIREMENTS FR-LEGAL-6), so the design system's cookie-based init
@@ -16,17 +18,77 @@
         root.dataset.theme = theme;
       })();
     </script>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-    <meta name="theme-color" content="#f5f2ea" />
-    <meta name="description" content="Plan a week of meals for your household and get the grocery list. Offline, no account, no cookies." />
-    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-    <link rel="manifest" href="/site.webmanifest" />
+    <title>Plateful — Weekly Meal Planner &amp; Grocery List</title>
+    <meta name="description" content="Free weekly meal planner for your household. Pick a diet and macro profile, get shared dishes with portions sized for each person, and copy one grocery list. Offline, no account, no cookies." />
+    <meta name="keywords" content="meal planner, weekly meal plan, grocery list, shopping list, macro calculator, calorie calculator, vegetarian meal plan, vegan meal plan, keto meal plan, high protein meal plan, household meal planning, portion sizes" />
+    <meta name="author" content="Luca Bonaldo" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="application-name" content="Plateful" />
+    <meta name="apple-mobile-web-app-title" content="Plateful" />
+    <meta name="format-detection" content="telephone=no" />
     <link rel="canonical" href="https://plateful.lucabonaldo.dev/" />
-    <title>Plateful — weekly meals and grocery list</title>
+
+    <meta name="theme-color" content="#f5f2ea" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Plateful" />
+    <meta property="og:title" content="Plateful — Plan the week. Shop once." />
+    <meta property="og:description" content="Shared weekly meals with portions sized for each person, and one grocery list. Free, offline, no account, no cookies." />
+    <meta property="og:url" content="https://plateful.lucabonaldo.dev/" />
+    <meta property="og:locale" content="en_GB" />
+    <meta property="og:image" content="https://plateful.lucabonaldo.dev/og-image.png" />
+    <meta property="og:image:secure_url" content="https://plateful.lucabonaldo.dev/og-image.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Plateful: plan the week, shop once. Screenshot of a weekly meal plan grid." />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Plateful — Plan the week. Shop once." />
+    <meta name="twitter:description" content="Shared weekly meals with portions sized for each person, and one grocery list. Free, offline, no account, no cookies." />
+    <meta name="twitter:image" content="https://plateful.lucabonaldo.dev/og-image.png" />
+    <meta name="twitter:image:alt" content="Plateful: plan the week, shop once. Screenshot of a weekly meal plan grid." />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Plateful",
+        "url": "https://plateful.lucabonaldo.dev/",
+        "description": "Client-only weekly meal planner: household calorie and macro targets, shared dishes with per-person portions, and an aggregated grocery list.",
+        "applicationCategory": "LifestyleApplication",
+        "operatingSystem": "Any (web browser)",
+        "browserRequirements": "Requires JavaScript",
+        "inLanguage": "en",
+        "image": "https://plateful.lucabonaldo.dev/og-image.png",
+        "screenshot": "https://plateful.lucabonaldo.dev/og-image.png",
+        "isAccessibleForFree": true,
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
+        "featureList": [
+          "Calorie and macro targets per person (Mifflin-St Jeor)",
+          "Omnivore, flexitarian, pescatarian, vegetarian and vegan diets",
+          "Keto, low-carb, high-protein, Mediterranean and other macro profiles",
+          "Allergen exclusions",
+          "Automatic weekly plan with leftovers and batch cooking",
+          "Grocery list grouped by aisle with package suggestions",
+          "Works offline; data stays on the device"
+        ],
+        "author": { "@type": "Person", "name": "Luca Bonaldo", "url": "https://lucabonaldo.dev" },
+        "license": "https://opensource.org/licenses/MIT",
+        "codeRepository": "https://github.com/LucaBonaldoIT/plateful"
+      }
+    </script>
   </head>
   <body>
     <div id="root"></div>
+    <noscript>
+      <h1>Plateful — Weekly Meal Planner &amp; Grocery List</h1>
+      <p>Plateful is a free, offline weekly meal planner. Describe your household, pick a diet and macro profile, and get shared dishes with portions sized for each person plus one grocery list. It needs JavaScript. Source code: <a href="https://github.com/LucaBonaldoIT/plateful">github.com/LucaBonaldoIT/plateful</a>.</p>
+    </noscript>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

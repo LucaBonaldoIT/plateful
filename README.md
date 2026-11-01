@@ -87,6 +87,7 @@ Open http://localhost:5180, or the `Network` URL Vite prints to try it on a phon
 | `npm run check` | Type-check only |
 | `npm test` | Unit tests (nutrition, generator, grocery list, import/export) |
 | `npm run db:lint` | Validate the recipe database and print diet × slot coverage |
+| `./scripts/og-image.sh` | Regenerate the social image and PNG icons in `public/` (needs Google Chrome) |
 
 ### Deployment
 
