@@ -7,9 +7,11 @@ import type { Recipe, SlotType } from '../../domain/types';
 import { BASE } from './base';
 import { BREAKFAST } from './breakfast';
 import { FISH } from './fish';
+import { FLEXITARIAN } from './flexitarian';
 import { MEAT } from './meat';
 import { SNACKS } from './snacks';
 import { VEGAN } from './vegan';
+import { VEGAN_KETO } from './vegan-keto';
 import { VEGETARIAN } from './vegetarian';
 
 const SLOT: Record<string, SlotType> = { B: 'breakfast', L: 'lunch', D: 'dinner', S: 'snack' };
@@ -39,4 +41,4 @@ function parse(source: string): Recipe[] {
     });
 }
 
-export const RECIPES: Recipe[] = [BASE, BREAKFAST, SNACKS, VEGAN, VEGETARIAN, FISH, MEAT].flatMap(parse);
+export const RECIPES: Recipe[] = [BASE, BREAKFAST, SNACKS, VEGAN, VEGAN_KETO, VEGETARIAN, FLEXITARIAN, FISH, MEAT].flatMap(parse);

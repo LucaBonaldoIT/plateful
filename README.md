@@ -49,7 +49,7 @@ Plateful is a free, static, client-only web app. There's no backend, no account,
 - **Grocery list:** exact raw quantities plus suggested package sizes, grouped by aisle. Copy it to the clipboard as a checklist in one click.
 - **Saved plans:** keep, rename, duplicate and reopen past weeks.
 - **Your data, on your device:** JSON export, import and delete.
-- **Bundled database:** 362 recipes, 187 of them vegan and 292 vegetarian, plus 204 ingredients with nutrition data from USDA FoodData Central.
+- **Bundled database:** 407 recipes, 212 of them vegan (25 vegan keto) and 317 vegetarian, plus 20 flexitarian plant-forward dishes and 204 ingredients with nutrition data from USDA FoodData Central.
 
 ## Tech stack
 
