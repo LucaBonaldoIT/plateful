@@ -1,0 +1,11 @@
+node_modules/
+dist/
+coverage/
+*.tgz
+*.local
+.env*
+!.env.example
+.DS_Store
+.vscode/*
+!.vscode/extensions.json
+.idea/

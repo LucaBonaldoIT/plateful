@@ -1,0 +1,36 @@
+name: Bug report
+description: Something doesn't work as described in the requirements.
+labels: [bug]
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened
+      description: What you saw, and what you expected instead.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Household with …
+        2. Generate week …
+        3. …
+    validations:
+      required: true
+  - type: input
+    id: browser
+    attributes:
+      label: Browser and device
+      placeholder: Safari 19, iPhone 16
+  - type: input
+    id: requirement
+    attributes:
+      label: Related requirement
+      placeholder: FR-GEN-3
+  - type: textarea
+    id: data
+    attributes:
+      label: Exported data (optional)
+      description: Remove names and personal details before pasting. Never paste data about other people without their consent.
