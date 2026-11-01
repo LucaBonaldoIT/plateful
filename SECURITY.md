@@ -2,7 +2,7 @@
 
 ## Supported versions
 
-Plateful is under active development. Security fixes are applied to the latest version on `main` and to the deployed app. Older commits are not patched.
+Plateful is under active development. Security fixes are applied to the latest version on `main` and to the deployed app at [plateful.lucabonaldo.dev](https://plateful.lucabonaldo.dev). Older commits are not patched.
 
 ## Reporting a vulnerability
 

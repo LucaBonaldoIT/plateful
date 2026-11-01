@@ -6,13 +6,14 @@
 
 Pick a diet and a macro profile, describe the people eating, and Plateful plans shared dishes with portions sized for each person, then adds up every raw ingredient you need to buy. Everything runs in your browser.
 
-[![Status](https://img.shields.io/badge/status-in%20design-2e7d32?style=flat-square)](docs/REQUIREMENTS.md)
+[![Live app](https://img.shields.io/badge/live%20app-plateful.lucabonaldo.dev-2e7d32?style=flat-square)](https://plateful.lucabonaldo.dev)
+[![Status](https://img.shields.io/badge/status-in%20design-8a5a08?style=flat-square)](docs/REQUIREMENTS.md)
 [![TypeScript](https://img.shields.io/badge/TypeScript-strict-3178c6?style=flat-square&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![React](https://img.shields.io/badge/React-61dafb?style=flat-square&logo=react&logoColor=black)](https://react.dev/)
 [![Vite](https://img.shields.io/badge/built%20with-Vite-646cff?style=flat-square&logo=vite&logoColor=white)](https://vite.dev/)
 [![License](https://img.shields.io/badge/license-MIT-blue?style=flat-square)](LICENSE)
 
-[Requirements](docs/REQUIREMENTS.md) · [Report an issue](https://github.com/LucaBonaldoIT/plateful/issues) · [Contributing](CONTRIBUTING.md) · [Security](SECURITY.md)
+[**Launch the app**](https://plateful.lucabonaldo.dev) · [Requirements](docs/REQUIREMENTS.md) · [Report an issue](https://github.com/LucaBonaldoIT/plateful/issues) · [Contributing](CONTRIBUTING.md) · [Security](SECURITY.md)
 
 </div>
 

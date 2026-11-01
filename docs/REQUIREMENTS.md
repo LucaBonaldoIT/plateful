@@ -504,7 +504,7 @@ interface Recipe {
 | Legal pages            | Disclaimer, Terms of Service, Privacy Policy (offline only, no liability) |
 | Operator               | Luca Bonaldo (individual), contact me@lucabonaldo.dev               |
 | Governing law          | Italy; GDPR applies                                                 |
-| Hosting                | Cloudflare Pages                                                    |
+| Hosting                | Cloudflare Pages at https://plateful.lucabonaldo.dev                |
 | Source code license    | MIT                                                                 |
 | Cookie notice          | Informational "no cookies" box with a single OK button              |
 
@@ -633,6 +633,10 @@ Settings) as a bottom bar on mobile and `.ds-nav` in the header on wide screens.
   download the raw content and reset.
 
 ### Browser support
+
+- **NFR-DEPLOY-1** Production is served from **https://plateful.lucabonaldo.dev** (Cloudflare
+  Pages, custom domain, HTTPS only). The build sets that canonical URL, and `robots.txt`,
+  `sitemap.xml` and `site.webmanifest` live in `public/` (as in flaplab).
 
 - **NFR-BR-1** The last 2 versions of Chrome, Edge, Firefox and Safari (desktop and iOS/Android).
 
