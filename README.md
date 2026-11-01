@@ -87,11 +87,12 @@ Open http://localhost:5180, or the `Network` URL Vite prints to try it on a phon
 | `npm run check` | Type-check only |
 | `npm test` | Unit tests (nutrition, generator, grocery list, import/export) |
 | `npm run db:lint` | Validate the recipe database and print diet × slot coverage |
+| `./build.sh` | Install dependencies if needed and produce the static site in `dist/` |
 | `./scripts/og-image.sh` | Regenerate the social image and PNG icons in `public/` (needs Google Chrome) |
 
 ### Deployment
 
-`npm run build` emits a fully static site in `dist/` with hash routes, so it runs on any static host without rewrites. Production is served from Cloudflare Pages at [plateful.lucabonaldo.dev](https://plateful.lucabonaldo.dev).
+`./build.sh` (or `npm run build`) emits a fully static site in `dist/` with hash routes, so it runs on any static host without rewrites. Production is served from Cloudflare Pages at [plateful.lucabonaldo.dev](https://plateful.lucabonaldo.dev).
 
 ## Project structure
 
@@ -102,7 +103,8 @@ plateful/
 │   ├── data/             Bundled ingredient table and recipe database
 │   ├── state/            Zustand store, localStorage persistence, theme and cookie-notice prefs
 │   └── ui/               React screens, components and app.css
-├── scripts/db-lint.ts    Database checks (FR-DB-5)
+├── scripts/              db-lint.ts (FR-DB-5), og-image.sh (social image and icons)
+├── build.sh              Static build helper
 ├── docs/
 │   ├── REQUIREMENTS.md   Product requirements, decision log, legal texts
 │   └── design/
